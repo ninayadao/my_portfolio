@@ -1,6 +1,6 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,11 +16,12 @@
         }
 
         body {
-            background-color: #f2f7fc;
+            background-color: #eaf4fb;
             color: #30465c;
             font-family: Arial, sans-serif;
             margin: 0;
             line-height: 1.7;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         header {
@@ -95,12 +96,12 @@
         }
 
         nav a:hover {
-            background-color: #173b5c;
+            background-color: #2f6f9f;
             color: #ffffff;
         }
 
         .hero {
-            background: linear-gradient(135deg, #e0f0ff, #ffffff);
+            background: linear-gradient(135deg, #cfe8ff, #f8fcff, #e0f0ff);
             padding: 55px 20px;
             text-align: center;
         }
@@ -118,7 +119,7 @@
 
         .button {
             display: inline-block;
-            background-color: #2f6f9f;
+            background: linear-gradient(135deg, #2f6f9f, #438ec2);
             color: white;
             padding: 11px 24px;
             border-radius: 6px;
@@ -130,20 +131,21 @@
         }
 
         .button:hover {
-            background-color: #173b5c;
+            background: #173b5c;
             transform: translateY(-2px);
         }
 
         section {
-            background-color: white;
+            background-color: #ffffff;
             margin: 25px auto;
             padding: 30px;
             width: 88%;
             max-width: 1100px;
-            border: 1px solid #e1eaf3;
+            border: 1px solid #d5e7f6;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(23, 59, 92, 0.06);
+            box-shadow: 0 5px 18px rgba(23, 59, 92, 0.07);
             scroll-margin-top: 85px;
+            transition: background-color 0.3s, border-color 0.3s;
         }
 
         h2 {
@@ -156,7 +158,7 @@
             display: block;
             width: 45px;
             height: 3px;
-            background-color: #65b5ef;
+            background: linear-gradient(90deg, #65b5ef, #bde3ff);
             border-radius: 5px;
             margin-top: 7px;
         }
@@ -182,8 +184,8 @@
         }
 
         .about-details p {
-            background-color: #f1f7fd;
-            border: 1px solid #dce8f2;
+            background: linear-gradient(135deg, #f1f7fd, #e6f3ff);
+            border: 1px solid #d5e7f6;
             border-radius: 8px;
             padding: 14px;
             margin: 0;
@@ -205,19 +207,19 @@
         }
 
         .skill {
-            background-color: #f1f7fd;
+            background: linear-gradient(145deg, #f1f7fd, #e3f2ff);
             color: #214d73;
             padding: 20px 12px;
-            border: 1px solid #d5e7f6;
+            border: 1px solid #cfe4f7;
             border-radius: 8px;
             text-align: center;
             transition: 0.3s;
         }
 
         .skill:hover {
-            background-color: #dceeff;
+            background: linear-gradient(145deg, #dceeff, #c5e4ff);
             transform: translateY(-3px);
-            box-shadow: 0 5px 12px rgba(23, 59, 92, 0.08);
+            box-shadow: 0 5px 12px rgba(23, 59, 92, 0.12);
         }
 
         .skill h3 {
@@ -239,16 +241,16 @@
         }
 
         .project {
-            border: 1px solid #dce8f2;
+            border: 1px solid #d5e7f6;
             border-radius: 10px;
             overflow: hidden;
-            background-color: white;
+            background-color: #ffffff;
             transition: 0.3s;
         }
 
         .project:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 18px rgba(23, 59, 92, 0.12);
+            box-shadow: 0 8px 18px rgba(23, 59, 92, 0.14);
         }
 
         .project img {
@@ -277,16 +279,17 @@
 
         .tag {
             display: inline-block;
-            background-color: #e5f2ff;
+            background-color: #e0f0ff;
             color: #214d73;
             padding: 4px 10px;
+            border: 1px solid #cfe4f7;
             border-radius: 5px;
             font-size: 12px;
             margin: 4px 3px 0 0;
         }
 
         .info-card {
-            background-color: #f1f7fd;
+            background: linear-gradient(135deg, #f1f7fd, #e6f3ff);
             padding: 22px;
             border-radius: 8px;
             border-left: 4px solid #65b5ef;
@@ -328,11 +331,12 @@
         }
 
         .contact-info a:not(.button):hover {
+            color: #173b5c;
             text-decoration: underline;
         }
 
         footer {
-            background-color: #173b5c;
+            background: linear-gradient(135deg, #173b5c, #2f6f9f);
             color: white;
             text-align: center;
             padding: 22px;
@@ -343,6 +347,161 @@
             margin: 5px;
             font-size: 14px;
             color: #d8ecff;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 16px;
+            right: 20px;
+            z-index: 1000;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 15px;
+            border: 1px solid #bde3ff;
+            border-radius: 30px;
+            background: #eaf4fb;
+            color: #173b5c;
+            box-shadow: 0 4px 14px rgba(23, 59, 92, 0.2);
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .theme-toggle:hover {
+            background: #bde3ff;
+            transform: translateY(-2px);
+        }
+
+        body.dark-mode {
+            background-color: #101d2b;
+            color: #dcecff;
+        }
+
+        body.dark-mode header {
+            background: linear-gradient(135deg, #102a43, #245b82);
+        }
+
+        body.dark-mode .profile-picture {
+            border-color: #bde3ff;
+            background-color: #203a52;
+        }
+
+        body.dark-mode nav {
+            background-color: #172b40;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        body.dark-mode nav a {
+            color: #dcecff;
+        }
+
+        body.dark-mode nav a:hover {
+            background-color: #438ec2;
+            color: #ffffff;
+        }
+
+        body.dark-mode .hero {
+            background: linear-gradient(135deg, #193650, #14283b, #1b3046);
+        }
+
+        body.dark-mode .hero h2,
+        body.dark-mode h2,
+        body.dark-mode .about-details strong,
+        body.dark-mode .skill,
+        body.dark-mode .project h3,
+        body.dark-mode .info-card h3 {
+            color: #c5e4ff;
+        }
+
+        body.dark-mode .button {
+            background: linear-gradient(135deg, #367eaf, #438ec2);
+            color: #ffffff;
+        }
+
+        body.dark-mode .button:hover {
+            background: #bde3ff;
+            color: #102a43;
+        }
+
+        body.dark-mode section {
+            background-color: #182b3e;
+            border-color: #2b4963;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.22);
+        }
+
+        body.dark-mode .about-details {
+            background-color: transparent;
+        }
+
+        body.dark-mode .about-details p,
+        body.dark-mode .skill,
+        body.dark-mode .info-card {
+            background: linear-gradient(135deg, #203a52, #1b3349);
+            border-color: #365873;
+            color: #dcecff;
+        }
+
+        body.dark-mode .skill:hover {
+            background: linear-gradient(135deg, #294b68, #24445f);
+            box-shadow: 0 5px 14px rgba(0, 0, 0, 0.2);
+        }
+
+        body.dark-mode .skill p,
+        body.dark-mode .project p {
+            color: #c1d4e5;
+        }
+
+        body.dark-mode .project {
+            background-color: #1a3045;
+            border-color: #365873;
+        }
+
+        body.dark-mode .project img {
+            background-color: #203a52;
+        }
+
+        body.dark-mode .tag {
+            background-color: #284c69;
+            border-color: #416988;
+            color: #d7ecff;
+        }
+
+        body.dark-mode .info-card {
+            border-left-color: #65b5ef;
+        }
+
+        body.dark-mode .info-card li::marker {
+            color: #8dcfff;
+        }
+
+        body.dark-mode .contact-info a:not(.button) {
+            color: #8dcfff;
+        }
+
+        body.dark-mode .contact-info a:not(.button):hover {
+            color: #bde3ff;
+        }
+
+        body.dark-mode footer {
+            background: linear-gradient(135deg, #0c1c2a, #173b5c);
+            color: #ffffff;
+        }
+
+        body.dark-mode footer p {
+            color: #c5e4ff;
+        }
+
+        body.dark-mode .theme-toggle {
+            background-color: #203a52;
+            border-color: #65b5ef;
+            color: #dcecff;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+        }
+
+        body.dark-mode .theme-toggle:hover {
+            background-color: #2b4d69;
         }
 
         @media screen and (max-width: 900px) {
@@ -361,7 +520,7 @@
 
         @media screen and (max-width: 600px) {
             header {
-                padding: 30px 18px;
+                padding: 65px 18px 30px;
             }
 
             .header-content {
@@ -438,11 +597,22 @@
                 grid-template-columns: 1fr;
                 gap: 15px;
             }
+
+            .theme-toggle {
+                top: 10px;
+                right: 10px;
+                padding: 8px 12px;
+                font-size: 12px;
+            }
         }
     </style>
 </head>
 
 <body>
+
+    <button id="themeToggle" class="theme-toggle" type="button">
+        🌙 Dark Mode
+    </button>
 
     <header id="home">
         <div class="header-content">
@@ -471,8 +641,8 @@
     <div class="hero">
         <h2>Hello, I'm Nina!</h2>
         <p>
-            Welcome to my personal portfolio. I am a student with an interest in 
-            programming, web development, and computer applications. I continuously 
+            Welcome to my personal portfolio. I am a student with an interest in
+            programming, web development, and computer applications. I continuously
             improve my technical skills through practice and by developing different projects.
         </p>
         <a class="button" href="#projects">View My Projects</a>
@@ -519,7 +689,6 @@
         <p>Here are some of the programming languages and tools I have learned and practiced.</p>
 
         <div class="skills">
-
             <div class="skill">
                 <h3>HTML</h3>
                 <p>Creating webpage structures</p>
@@ -559,7 +728,6 @@
                 <h3>Visual Basic 6.0</h3>
                 <p>Developing Windows applications</p>
             </div>
-
         </div>
     </section>
 
@@ -568,7 +736,6 @@
         <p>Here are some of the programming projects I have worked on as part of my learning experience.</p>
 
         <div class="projects">
-            
             <div class="project">
                 <img src="enrollment.png" alt="Visual Basic 6.0 Enrollment Management System">
 
@@ -582,6 +749,8 @@
                     <span class="tag">Visual Basic 6.0</span>
                     <span class="tag">Microsoft Access</span>
                     <span class="tag">ODBC</span>
+                    <span class="tag">Canva</span>
+
                 </div>
             </div>
 
@@ -597,6 +766,7 @@
                     </p>
                     <span class="tag">VB.NET</span>
                     <span class="tag">Microsoft Access</span>
+                    <span class="tag">Canva</span>
                 </div>
             </div>
 
@@ -628,7 +798,6 @@
                     <span class="tag">C++</span>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -661,7 +830,6 @@
 
         <div class="contact-content">
             <div class="contact-info">
-
                 <p>
                     <strong>Email:</strong>
                     <a href="mailto:contact.ninayadao@gmail.com">
@@ -695,7 +863,6 @@
                         Iya
                     </a>
                 </p>
-
             </div>
 
             <div class="contact-info">
@@ -711,8 +878,37 @@
     </section>
 
     <footer>
-        <p>© 2026 Nina Yadao | Personal Portfolio</p>
+        <p>© 2026 Nina Yadao</p>
     </footer>
+
+    <script>
+        const themeToggle = document.getElementById("themeToggle");
+        const savedTheme = localStorage.getItem("portfolioTheme");
+
+        function setTheme(theme) {
+            const isDark = theme === "dark";
+
+            document.body.classList.toggle("dark-mode", isDark);
+
+            themeToggle.textContent = isDark
+                ? "☀️ Light Mode"
+                : "🌙 Dark Mode";
+
+            themeToggle.setAttribute(
+                "aria-label",
+                isDark ? "Switch to light mode" : "Switch to dark mode"
+            );
+
+            localStorage.setItem("portfolioTheme", theme);
+        }
+
+        setTheme(savedTheme === "dark" ? "dark" : "light");
+
+        themeToggle.addEventListener("click", function () {
+            const isDark = document.body.classList.contains("dark-mode");
+            setTheme(isDark ? "light" : "dark");
+        });
+    </script>
 
 </body>
 </html>
